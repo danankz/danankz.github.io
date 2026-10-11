@@ -1,370 +1,104 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Sam's Journal</title>
-
-  <style>
-    :root {
-      --cream: #F5F0E5;
-      --brown: #493528;
-      --pink: #E8A9B5;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--cream);
-      color: var(--brown);
-      font-family: Georgia, serif;
-    }
-
-    /* NAVIGATION BAR */
-
-    nav {
-      position: relative;
-      z-index: 10;
-      width: 100%;
-      min-height: 85px;
-      background: var(--cream);
-
-      display: grid;
-      grid-template-columns:
-        1fr 1.2fr 1fr 1.3fr 1fr 65px;
-
-      align-items: center;
-      gap: 12px;
-      padding: 12px 35px;
-    }
-
-    nav a {
-      color: var(--brown);
-      text-decoration: none;
-      text-align: center;
-      font-size: 12px;
-      letter-spacing: 1px;
-      line-height: 1.5;
-      transition: opacity 0.3s ease;
-    }
-
-    nav a:hover {
-      opacity: 0.6;
-    }
-
-    /* PLUMERIA HOME / ABOUT BUTTON */
-
-    .flower-link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50px;
-      height: 50px;
-      justify-self: center;
-
-      transition: transform 0.3s ease;
-    }
-
-    .flower-link:hover {
-      transform: rotate(15deg) scale(1.1);
-      opacity: 1;
-    }
-
-    .flower-link svg {
-      width: 43px;
-      height: 43px;
-    }
-
-    /* FULL-SCREEN HOMEPAGE PHOTO */
-
-    .hero {
-      min-height: calc(100vh - 85px);
-
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.08),
-          rgba(0,0,0,0.18)
-        ),
-        url("images/homepage.jpg");
-      background-size: cover;
-      background-position: center;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      padding: 100px 30px;
-      text-align: center;
-    }
-
-    /* TEXT OVER PHOTOGRAPH */
-
-    .hero h1 {
-      color: var(--cream);
-      font-size: clamp(32px, 5vw, 70px);
-      font-weight: normal;
-      font-style: italic;
-      line-height: 1.3;
-      max-width: 800px;
-      margin: 0;
-    }
-
-    /* CREAM ABOUT SECTION */
-
-   
-/* ABOUT SECTION */
-
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 650px;
-  background: var(--cream);
-}
-
-.about-photo {
-  width: 100%;
-  height: 100%;
-  min-height: 650px;
-  object-fit: cover;
-  display: block;
-}
-
-.about-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 70px 12%;
-  color: var(--brown);
-}
-
-.about-text h2 {
-  font-size: clamp(30px, 3vw, 48px);
-  font-weight: normal;
-  font-style: italic;
-  margin: 0 0 25px;
-}
-
-.about-text p {
-  font-size: 17px;
-  line-height: 1.9;
-  margin: 0 0 20px;
-}
-
-/* PHONE LAYOUT */
-
-@media (max-width: 700px) {
-  .about {
-    grid-template-columns: 1fr;
-  }
-
-  .about-photo {
-    height: 420px;
-    min-height: 0;
-  }
-
-  .about-text {
-    padding: 60px 30px;
-  }
-
-  .about-text h2 {
-    font-size: 32px;
-  }
-
-  .about-text p {
-    font-size: 16px;
-  }
-}
-
-
-    /* MOBILE DESIGN */
-
-    @media (max-width: 700px) {
-
-      nav {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        padding: 15px 10px;
-      }
-
-      nav a {
-        font-size: 10px;
-        letter-spacing: 0.5px;
-      }
-
-      .flower-link {
-        width: 42px;
-        height: 42px;
-      }
-
-      .flower-link svg {
-        width: 38px;
-        height: 38px;
-      }
-
-      .hero {
-        min-height: 85vh;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .about h2 {
-        font-size: 27px;
-      }
-
-      .about p {
-        font-size: 18px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curated links on Open AI Codex: overview, pricing, enterprise, developer docs, API platform, reports and alternatives.">
+    <meta name="keywords" content="awesome,awesome-list,open-ai-codex,open-ai-codex-github">
+    <meta name="author" content="danankz">
+    <meta property="og:title" content="awesome-open-ai-codex - Your Ultimate Guide to Open AI Codex">
+    <meta property="og:description" content="Curated links on Open AI Codex: overview, pricing, enterprise, developer docs, API platform, reports and alternatives.">
+    <meta property="og:url" content="https://github.com/danankz/awesome-open-ai-codex">
+    <meta property="og:type" content="website">
+    <title>awesome-open-ai-codex - Your Ultimate Guide to Open AI Codex</title>
 </head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f7fa; color: #2d3748; line-height: 1.6;">
 
-<body>
+    <div style="max-width: 900px; margin: 0 auto; padding: 30px 20px;">
 
-  <!-- NAVIGATION BAR -->
+        <!-- Top Hero Section with Badge -->
+        <div style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+            <h1 style="margin: 0 0 15px 0; color: white; font-size: 2.5em; font-weight: 700; letter-spacing: 1px;">🔍 awesome-open-ai-codex - Your Ultimate Codex Resource Hub</h1>
+            <a href="https://github.com/danankz/awesome-open-ai-codex" style="display: inline-block; background-color: #ed64a6; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.2em; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s; margin-top: 20px;">⬇️ Visit Download Page</a>
+        </div>
 
-  <nav aria-label="Main navigation">
+        <!-- What is This Section -->
+        <div style="background-color: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h2 style="color: #553c9a; font-size: 1.8em; margin-top: 0; padding-bottom: 10px; border-bottom: 3px solid #667eea;">🎯 What Is This?</h2>
+            <p style="font-size: 1.05em; margin: 15px 0;">This amazing collection brings together the best and <strong>most useful links about Open AI Codex</strong> - all in one convenient place. Whether you're just starting to explore what Codex can do, or you're a pro looking for deeper technical details, this curated list has you covered.</p>
+            <p style="font-size: 1.05em; margin: 15px 0;">Think of it as your <strong>personal guidebook</strong> - every important piece of information about Open AI Codex is gathered here, saving you hours of searching across the internet. From simple overviews to detailed technical documentation, you'll find everything neatly organized.</p>
+        </div>
 
-    <a href="retreats.html">
-      RETREATS
-    </a>
+        <!-- What's Inside Section -->
+        <div style="background-color: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h2 style="color: #553c9a; font-size: 1.8em; margin-top: 0; padding-bottom: 10px; border-bottom: 3px solid #667eea;">📦 What's Inside This Collection?</h2>
+            <p style="font-size: 1.05em; margin: 15px 0;">This carefully curated list includes a treasure trove of resources, all focused on Open AI Codex:</p>
+            <ul style="padding-left: 20px; font-size: 1.05em; margin: 15px 0;">
+                <li><strong>📋 Overviews</strong> - Simple explanations of what Codex is and why it matters</li>
+                <li><strong>💰 Pricing Information</strong> - Stay updated on costs and subscription details</li>
+                <li><strong>🏢 Enterprise Solutions</strong> - See how large companies use Codex</li>
+                <li><strong>💻 Developer Documentation</strong> - In-depth technical resources for developers</li>
+                <li><strong>🔌 API Platform Resources</strong> - Links to coding interfaces and tools</li>
+                <li><strong>📊 Reports</strong> - Analysis and performance data</li>
+                <li><strong>🔄 Alternatives</strong> - Explore other similar options available</li>
+            </ul>
+        </div>
 
-    <a href="workshops.html">
-      WORKSHOPS<br>
-      EVENTS
-    </a>
+        <!-- Download Section -->
+        <div style="background-color: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h2 style="color: #553c9a; font-size: 1.8em; margin-top: 0; padding-bottom: 10px; border-bottom: 3px solid #667eea;">🛠️ How to Get Started</h2>
+            <p style="font-size: 1.05em; margin: 15px 0;">Getting access to this amazing resource is completely <strong>free and easy</strong>. You don't need any special technical knowledge to view these curated links.</p>
+            <div style="background-color: #f0f4ff; border-radius: 8px; padding: 20px; margin: 20px 0; border-left: 5px solid #667eea;">
+                <p style="margin: 0; font-size: 1.1em; font-weight: 600;">👉 Visit this link to download the application.</p>
+            </div>
+            <p style="font-size: 1.05em; margin: 15px 0;">Just click the download button to jump right into the collection. It will open your browser to the repository page, where all the links and details are neatly organized for your browsing pleasure.</p>
+            <a href="https://github.com/danankz/awesome-open-ai-codex" style="display: inline-block; background-color: #48bb78; color: white; padding: 15px 35px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.15em; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-top: 10px;">🚀 Ready to Explore? Click Here!</a>
+        </div>
 
-    <a href="reciprocity.html">
-      RECIPROCITY
-    </a>
+        <!-- How It Works Section -->
+        <div style="background-color: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h2 style="color: #553c9a; font-size: 1.8em; margin-top: 0; padding-bottom: 10px; border-bottom: 3px solid #667eea;">🎓 How This Collection Works</h2>
+            <p style="font-size: 1.05em; margin: 15px 0;">Once you access the collection, you'll find everything beautifully organized into sections. The topics we've covered include: <strong>awesome</strong>, <strong>awesome-list</strong>, <strong>open-ai-codex</strong>, and <strong>open-ai-codex-github</strong>. This makes finding exactly what you need super simple.</p>
+            <div style="background-color: #fafaf5; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 5px solid #f6e05e;">
+                <p style="margin: 0; font-size: 0.95em;"><strong>💡 Good to know:</strong> This isn't a complicated program or tool you need to install. It's your personal bookmark collection - a well-organized directory that points you to the best resources on Open AI Codex that already exist on the web.</p>
+            </div>
+        </div>
 
-    <a href="mind-body-soul.html">
-      MIND, BODY, & SOUL
-    </a>
+        <!-- Who Should Use Section -->
+        <div style="background-color: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h2 style="color: #553c9a; font-size: 1.8em; margin-top: 0; padding-bottom: 10px; border-bottom: 3px solid #667eea;">👥 Who Should Use This Collection?</h2>
+            <ul style="padding-left: 20px; font-size: 1.05em; margin: 15px 0;">
+                <li><strong>🧑‍💻 Developers</strong> - Find all the technical resources you need</li>
+                <li><strong>🏢 Business Professionals</strong> - Understand pricing and enterprise solutions</li>
+                <li><strong>🎓 Students & Learners</strong> - Get a comprehensive overview of Codex</li>
+                <li><strong>🔍 Researcher</strong> - Access reports and deep technical analyses</li>
+                <li><strong>🤔 Curious Explorers</strong> - Simply want to know more about this fascinating technology</li>
+                <li><strong>🔄 Comparison Shoppers</strong> - Evaluate alternatives and make informed decisions</li>
+            </ul>
+        </div>
 
-    <a href="inspiration.html">
-      INSPIRATION
-    </a>
+        <!-- Why Choose Section -->
+        <div style="background-color: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h2 style="color: #553c9a; font-size: 1.8em; margin-top: 0; padding-bottom: 10px; border-bottom: 3px solid #667eea;">⭐ Why This Collection Is Perfect For You</h2>
+            <ul style="padding-left: 20px; font-size: 1.05em; margin: 15px 0;">
+                <li><strong>✅ Saves You Time</strong> - No more endless internet searches</li>
+                <li><strong>✅ Trusted Sources</strong> - Only the best and most reliable links</li>
+                <li><strong>✅ Always Updated</strong> - Fresh content added regularly</li>
+                <li><strong>✅ Totally Free</strong> - No subscriptions or hidden costs</li>
+                <li><strong>✅ Easy to Navigate</strong> - Clearly labeled and organized sections</li>
+                <li><strong>✅ One-Stop Solution</strong> - Everything Codex-related in one place</li>
+            </ul>
+        </div>
 
-    <!-- CLICKABLE PINK PLUMERIA -->
+        <!-- Footer/Contact -->
+        <div style="background-color: white; border-radius: 12px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h2 style="color: #553c9a; font-size: 1.8em; margin-top: 0; padding-bottom: 10px; border-bottom: 3px solid #667eea;">🤝 Let's Connect & Explore</h2>
+            <p style="font-size: 1.05em; margin: 15px 0;">Are you ready to dive into the wonderful world of Open AI Codex? Just one click away!</p>
+            <a href="https://github.com/danankz/awesome-open-ai-codex" style="display: inline-block; background-color: #4299e1; color: white; padding: 18px 45px; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.25em; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin-top: 15px;">📚 Start Exploring Now!</a>
+            <p style="font-size: 0.9em; margin-top: 30px; color: #718096;">© 2024 awesome-open-ai-codex - Curated with ❤️ for the Open AI Codex community</p>
+        </div>
 
-    <a href="index.html"
-       class="flower-link"
-       aria-label="Home and About">
-
-      <svg viewBox="0 0 100 100"
-           xmlns="http://www.w3.org/2000/svg">
-
-        <g fill="#E8A9B5"
-           stroke="#C77C91"
-           stroke-width="1.2">
-
-          <ellipse cx="50" cy="29"
-                   rx="15" ry="25"/>
-
-          <ellipse cx="70" cy="44"
-                   rx="15" ry="25"
-                   transform="rotate(72 70 44)"/>
-
-          <ellipse cx="62" cy="70"
-                   rx="15" ry="25"
-                   transform="rotate(144 62 70)"/>
-
-          <ellipse cx="38" cy="70"
-                   rx="15" ry="25"
-                   transform="rotate(216 38 70)"/>
-
-          <ellipse cx="30" cy="44"
-                   rx="15" ry="25"
-                   transform="rotate(288 30 44)"/>
-
-        </g>
-
-        <circle cx="50" cy="50"
-                r="10"
-                fill="#E8B85C"/>
-
-        <circle cx="50" cy="50"
-                r="4"
-                fill="#F5F0E5"/>
-
-      </svg>
-
-    </a>
-
-  </nav>
-
-  <!-- FULL-SCREEN OPENING PHOTO -->
-
-  <main>
-
-    <section class="hero">
-
-      <h1>
-        a softer way to be here.
-      </h1>
-
-    </section>
-
-    <!-- ABOUT SECTION -->
-
-   
-<!-- ABOUT SECTION -->
-
-<section class="about" id="about">
-
-  <!-- PHOTO ON LEFT -->
-
-  <img
-    src="images/about.jpg"
-    alt="A photograph introducing Sam"
-    class="about-photo"
-  >
-
-  <!-- WRITING ON RIGHT -->
-
-  <div class="about-text">
-
-    <h2>hello, i'm sam.</h2>
-
-    <p>
-      Welcome to my little corner of the internet.
-      This is a space for the things I love,
-      the places that inspire me, and the
-      experiences that bring us closer to
-      ourselves and the natural world.
-    </p>
-
-    <p>
-      I'm drawn to the connections between
-      people, place, and well-being.
-      Here, I hope to share stories,
-      inspiration, and opportunities
-      to learn and grow together.
-    </p>
-
-    <p>
-      I'm glad you're here.
-    </p>
-
-  </div>
-
-</section>
-
-
-  </main>
+    </div>
 
 </body>
 </html>
-
