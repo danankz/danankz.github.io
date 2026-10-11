@@ -25,18 +25,24 @@
 
     /* NAVIGATION BAR */
 
-    nav {
-      position: relative;
-      z-index: 10;
-      background: var(--cream);
-      height: 85px;
-      display: grid;
-      grid-template-columns:
-        1fr 1fr 1fr 115px 1fr 1fr;
-      align-items: center;
-      gap: 12px;
-      padding: 0 30px;
-    }
+    
+
+nav {
+  position: relative;
+  z-index: 10;
+  background: var(--cream);
+  height: 85px;
+
+  display: grid;
+  grid-template-columns:
+    1fr 1.3fr 1fr 120px 1fr 1.3fr;
+
+  align-items: center;
+  gap: 10px;
+  padding: 0 25px;
+}
+
+
 
     nav a {
       color: var(--brown);
@@ -54,29 +60,38 @@
 
     /* HANGING SUN */
 
-    .sun-space {
-      position: relative;
-      width: 115px;
-      height: 100%;
-    }
+   
+.sun-space {
+  position: relative;
+  grid-column: 4;
+  width: 100%;
+  height: 100%;
+}
 
-    .sun {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 115px;
-      height: 110px;
-      color: var(--cream);
-      z-index: 20;
-      cursor: pointer;
-    }
+
+
+
+    
+.sun {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 120px;
+  height: 110px;
+
+  color: var(--cream);
+  z-index: 20;
+  cursor: pointer;
+}
+
 
     .sun svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
     /* FULL-SCREEN HOMEPAGE PHOTO */
 
@@ -207,32 +222,35 @@
          class="sun"
          aria-label="About">
 
-        <svg viewBox="0 0 120 110"
-             xmlns="http://www.w3.org/2000/svg">
+        
+<svg viewBox="0 0 120 110"
+     xmlns="http://www.w3.org/2000/svg">
 
-          <g fill="none"
-             stroke="currentColor"
-             stroke-width="2.5"
-             stroke-linecap="round">
+  <g fill="none"
+     stroke="currentColor"
+     stroke-width="2.5"
+     stroke-linecap="round">
 
-            <!-- SEMICIRCLE OUTLINE -->
+    <!-- TRUE SEMICIRCLE -->
 
-            <path d="M12 0 Q60 92 108 0"/>
+    <path d="M10 0 A50 50 0 0 0 110 0"/>
 
-            <!-- SUN RAYS -->
+    <!-- SUN RAYS -->
 
-            <path d="
-              M13 25 L2 32
-              M25 52 L13 65
-              M44 76 L38 94
-              M60 88 L60 107
-              M76 76 L82 94
-              M95 52 L107 65
-              M107 25 L118 32
-            "/>
+    <path d="
+      M13 22 L1 28
+      M24 48 L11 60
+      M42 68 L35 85
+      M60 76 L60 96
+      M78 68 L85 85
+      M96 48 L109 60
+      M107 22 L119 28
+    "/>
 
-          </g>
-        </svg>
+  </g>
+
+</svg>
+
 
       </a>
     </div>
