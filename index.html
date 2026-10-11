@@ -4,16 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Sam's Journal</title>
 
   <style>
     :root {
       --cream: #F5F0E5;
       --brown: #493528;
+      --pink: #E8A9B5;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -25,24 +31,21 @@
 
     /* NAVIGATION BAR */
 
-    
+    nav {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      min-height: 85px;
+      background: var(--cream);
 
-nav {
-  position: relative;
-  z-index: 10;
-  background: var(--cream);
-  height: 85px;
+      display: grid;
+      grid-template-columns:
+        1fr 1.2fr 1fr 1.3fr 1fr 65px;
 
-  display: grid;
-  grid-template-columns:
-    1fr 1.3fr 1fr 120px 1fr 1.3fr;
-
-  align-items: center;
-  gap: 10px;
-  padding: 0 25px;
-}
-
-
+      align-items: center;
+      gap: 12px;
+      padding: 12px 35px;
+    }
 
     nav a {
       color: var(--brown);
@@ -55,48 +58,35 @@ nav {
     }
 
     nav a:hover {
-      opacity: 0.55;
+      opacity: 0.6;
     }
 
-    /* HANGING SUN */
+    /* PLUMERIA HOME / ABOUT BUTTON */
 
-   
-.sun-space {
-  position: relative;
-  grid-column: 4;
-  width: 100%;
-  height: 100%;
-}
+    .flower-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      justify-self: center;
 
+      transition: transform 0.3s ease;
+    }
 
+    .flower-link:hover {
+      transform: rotate(15deg) scale(1.1);
+      opacity: 1;
+    }
 
-
-    
-.sun {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 120px;
-  height: 110px;
-
-  color: var(--cream);
-  z-index: 20;
-  cursor: pointer;
-}
-
-
-    .sun svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+    .flower-link svg {
+      width: 43px;
+      height: 43px;
+    }
 
     /* FULL-SCREEN HOMEPAGE PHOTO */
 
     .hero {
-      position: relative;
       min-height: calc(100vh - 85px);
 
       background:
@@ -112,11 +102,12 @@ nav {
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
+
       padding: 100px 30px;
+      text-align: center;
     }
 
-    /* INTRODUCTORY SENTENCE */
+    /* TEXT OVER PHOTOGRAPH */
 
     .hero h1 {
       color: var(--cream);
@@ -128,38 +119,42 @@ nav {
       margin: 0;
     }
 
-    /* CREAM JOURNAL SECTION */
+    /* CREAM ABOUT SECTION */
 
-    .journal {
+    .about {
       min-height: 55vh;
       background: var(--cream);
 
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      padding: 90px 25px;
       text-align: center;
-
-      padding: 80px 25px;
     }
 
-    .journal p {
-      max-width: 520px;
-      font-size: 24px;
-      line-height: 1.7;
+    .about h2 {
+      font-size: 32px;
       font-weight: normal;
+      font-style: italic;
+      margin-bottom: 20px;
     }
 
-    /* MOBILE LAYOUT */
+    .about p {
+      max-width: 600px;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    /* MOBILE DESIGN */
 
     @media (max-width: 700px) {
 
       nav {
-        height: auto;
-        min-height: 115px;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto;
-        gap: 18px 8px;
-        padding: 15px 10px 20px;
+        gap: 15px;
+        padding: 15px 10px;
       }
 
       nav a {
@@ -167,18 +162,14 @@ nav {
         letter-spacing: 0.5px;
       }
 
-      .sun-space {
-        grid-column: 2;
-        grid-row: 2;
-        justify-self: center;
-        width: 90px;
-        height: 0;
+      .flower-link {
+        width: 42px;
+        height: 42px;
       }
 
-      .sun {
-        top: 0;
-        width: 90px;
-        height: 90px;
+      .flower-link svg {
+        width: 38px;
+        height: 38px;
       }
 
       .hero {
@@ -189,8 +180,12 @@ nav {
         font-size: 36px;
       }
 
-      .journal p {
-        font-size: 20px;
+      .about h2 {
+        font-size: 27px;
+      }
+
+      .about p {
+        font-size: 18px;
       }
     }
   </style>
@@ -198,9 +193,9 @@ nav {
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAVIGATION BAR -->
 
-  <nav>
+  <nav aria-label="Main navigation">
 
     <a href="retreats.html">
       RETREATS
@@ -215,46 +210,6 @@ nav {
       RECIPROCITY
     </a>
 
-    <!-- CLICKABLE SUN / ABOUT PAGE -->
-
-    <div class="sun-space">
-      <a href="about.html"
-         class="sun"
-         aria-label="About">
-
-        
-<svg viewBox="0 0 120 110"
-     xmlns="http://www.w3.org/2000/svg">
-
-  <g fill="none"
-     stroke="currentColor"
-     stroke-width="2.5"
-     stroke-linecap="round">
-
-    <!-- TRUE SEMICIRCLE -->
-
-    <path d="M10 0 A50 50 0 0 0 110 0"/>
-
-    <!-- SUN RAYS -->
-
-    <path d="
-      M13 22 L1 28
-      M24 48 L11 60
-      M42 68 L35 85
-      M60 76 L60 96
-      M78 68 L85 85
-      M96 48 L109 60
-      M107 22 L119 28
-    "/>
-
-  </g>
-
-</svg>
-
-
-      </a>
-    </div>
-
     <a href="mind-body-soul.html">
       MIND, BODY, & SOUL
     </a>
@@ -263,9 +218,55 @@ nav {
       INSPIRATION
     </a>
 
+    <!-- CLICKABLE PINK PLUMERIA -->
+
+    <a href="index.html"
+       class="flower-link"
+       aria-label="Home and About">
+
+      <svg viewBox="0 0 100 100"
+           xmlns="http://www.w3.org/2000/svg">
+
+        <g fill="#E8A9B5"
+           stroke="#C77C91"
+           stroke-width="1.2">
+
+          <ellipse cx="50" cy="29"
+                   rx="15" ry="25"/>
+
+          <ellipse cx="70" cy="44"
+                   rx="15" ry="25"
+                   transform="rotate(72 70 44)"/>
+
+          <ellipse cx="62" cy="70"
+                   rx="15" ry="25"
+                   transform="rotate(144 62 70)"/>
+
+          <ellipse cx="38" cy="70"
+                   rx="15" ry="25"
+                   transform="rotate(216 38 70)"/>
+
+          <ellipse cx="30" cy="44"
+                   rx="15" ry="25"
+                   transform="rotate(288 30 44)"/>
+
+        </g>
+
+        <circle cx="50" cy="50"
+                r="10"
+                fill="#E8B85C"/>
+
+        <circle cx="50" cy="50"
+                r="4"
+                fill="#F5F0E5"/>
+
+      </svg>
+
+    </a>
+
   </nav>
 
-  <!-- HOMEPAGE PHOTOGRAPH -->
+  <!-- FULL-SCREEN OPENING PHOTO -->
 
   <main>
 
@@ -277,9 +278,13 @@ nav {
 
     </section>
 
-    <!-- CREAM SECTION BELOW PHOTO -->
+    <!-- ABOUT SECTION -->
 
-    <section class="journal">
+    <section class="about" id="about">
+
+      <h2>
+        a little about this space
+      </h2>
 
       <p>
         A collection of places, people,
